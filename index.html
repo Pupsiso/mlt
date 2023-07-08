@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="shortcut icon" href="https://static.tildacdn.com/tild6363-3164-4632-b262-383437643039/favicon.ico" type="image/x-icon">
+    <title>Анкеты участника</title>
+    <meta name="theme-color" content="#000000"/>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script><!--Подключаем скрипт от телеграм-->
+    <script>window.Telegram.WebApp.ready()</script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./public/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@latest/dist/js/jquery.suggestions.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/6.6.0/imask.min.js" integrity="sha512-yDMu4gwJLl20xxSm1RV5okIwDn97hXF1qi77r20nl/89wwXg7kqqVTiuLSLgBHCCVjc9+7een9nazDZDCf1ZWQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    <form action='' class='form' id="add-from" onsubmit="return false" method="get">
+        <div class="field">
+            <label class="label">Заполнение анкеты участника</label>
+            <div class="col">
+                            <p class="field input-with-placeholder">
+                                <input class="text-input" id="fullname" name="fullname" type="text" required>
+                                 <label class="key-label" for="fullname">Фамилия Имя Отчество</label>
+                            </p>
+                    </div>
+            <div class="col">
+                            <p class="field input-with-placeholder">
+                                <input class="text-input" id="mydata" name="mydata" maxlength="10" type="text" required>
+                                 <label class="key-label" for="mydata">Дата Рождения (__.__.____)</label>
+                            </p>
+                    </div>
+            <div class="col">
+                            <p class="field input-with-placeholder">
+                                <input class="text-input" id="place_live" name="place_live" type="text" required>
+                                 <label class="key-label" for="place_live">Город, в котором сейчас живешь</label>
+                            </p>
+                    </div>
+            <div class="col">
+                            <p class="field input-with-placeholder">
+                                <input class="text-input" id="email" name="email" type="email" value="" required>
+                                <label class="key-label" for="email">Электронная почта</label>
+                            </p>
+                    </div>
+            <div class="col">
+                            <p class="field input-with-placeholder">
+                                <input class="text-input" id="link_social" name="link_social" type="text" required>
+                                 <label class="key-label" for="link_social">Ссылка на твою страницу ВКонтакте</label>
+                            </p>
+            </div>
+            <div class="col">
+                <label class="label">Твой род деятельности</label>
+                <input class="option-input" id="option-0" name="option" type="radio" value="Work" required checked>
+                <label class="option-label" for="option-0">Работаю</label>
+
+                <input class="option-input" id="option-1" name="option" type="radio" value="Study" required>
+                <label class="option-label" for="option-1">Учусь</label>
+
+                <input class="option-input" id="option-2" name="option" type="radio" value="Other" required>
+                <label class="option-label" for="option-2">Другое</label>
+
+            </div>
+            <div class="col">
+                <label class="label">Направление, в котором ты развиваешь свой проект или проекты.</label>
+                <label class="label" style="font-size: 15px;color: #bfbfbf;">Выбери не более двух.</label>
+                <ul class="checkboxes row no-gutters">
+                  <li class="checkbox col">
+                    <input class="checkbox-input" id="choice-0" name="choice" type="checkbox" value="0">
+                    <label class="checkbox-label" for="choice-0">Дети и родители</label>
+                  </li>
+                  <li class="checkbox col">
+                    <input class="checkbox-input" id="choice-1" name="choice" type="checkbox" value="1">
+                    <label class="checkbox-label" for="choice-1">Медиа и кино</label>
+                  </li>
+                  <li class="checkbox col">
+                    <input class="checkbox-input" id="choice-2" name="choice" type="checkbox" value="2">
+                    <label class="checkbox-label" for="choice-2">История и патриотика</label>
+                  </li>
+                  <li class="checkbox col">
+                    <input class="checkbox-input" id="choice-3" name="choice" type="checkbox" value="3">
+                    <label class="checkbox-label" for="choice-3">Креатив и творчество</label>
+                  </li>
+                  <li class="checkbox col">
+                    <input class="checkbox-input" id="choice-4" name="choice" type="checkbox" value="4">
+                    <label class="checkbox-label" for="choice-4">Добровольчество и благотворительность</label>
+                  </li>
+                  <li class="checkbox col">
+                    <input class="checkbox-input" id="choice-5" name="choice" type="checkbox" value="5">
+                    <label class="checkbox-label" for="choice-5">Предпринимательство и инициативы</label>
+                  </li>
+                  <li class="checkbox col">
+                    <input class="checkbox-input" id="choice-6" name="choice" type="checkbox" value="6">
+                    <label class="checkbox-label" for="choice-6">Наука и образование</label>
+                  </li>
+                    <li class="checkbox col">
+                    <input class="checkbox-input" id="choice-7" name="choice" type="checkbox" value="7">
+                    <label class="checkbox-label" for="choice-7">Спорт и ЗОЖ</label>
+                  </li>
+                    <li class="checkbox col">
+                    <input class="checkbox-input" id="choice-8" name="choice" type="checkbox" value="8">
+                    <label class="checkbox-label" for="choice-8">Туризм</label>
+                  </li>
+                  <li class="checkbox col">
+                    <input class="checkbox-input" id="choice-9" name="choice" type="checkbox" value="9">
+                    <label class="checkbox-label" for="choice-9">Экология</label>
+                  </li>
+
+                </ul>
+            </div>
+        </div>
+    </form>
+    <script src='./public/js/app_min.js'></script>
+</body>
+</html>
